@@ -1,0 +1,437 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button {
+	cursor: pointer;
+}
+
+body {
+	background: #1A2A33;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.container {
+    max-width: 460px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.space-between {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pick-mark {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: #1F3641;
+    box-shadow: inset 0px -8px 0px #10212A;
+    border-radius: 15px;
+    padding: 28px 24px;
+}
+
+.select-mark {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    padding: 8px;
+    background: #1A2A33;
+    border-radius: 10px;
+}
+
+.select-mark button {
+    padding: 12px;
+    transition: 0.7s all ease-out;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+}
+
+.select-mark > button:hover {
+    background: #A8BFC9;
+    border-radius: 10px;
+}
+
+.select-mark button svg path {
+    transition: 0.7s all ease-out;
+}
+
+.select-mark button:hover svg path {
+    fill: #1A2A33;
+}
+
+p {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+
+    color: #A8BFC9;
+}
+
+span {
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.875px;
+    color: #A8BFC9;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+
+.select-mode {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.orange-buttonXL {
+    background: #F2B137;
+    box-shadow: inset 0px -8px 0px #CC8B13;
+    border-radius: 15px;
+    border: none;
+    padding: 12px 0;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 1.25px;
+    color: #1A2A33;
+
+    transition: 0.5s all ease-out;
+}
+
+.orange-button:hover {
+    background: #FFC860;
+    box-shadow: inset 0px -8px 0px #f1ae1b;
+    border-radius: 15px;
+}
+
+.skyBlue-button {
+    background: #31C3BD;
+    box-shadow: inset 0px -8px 0px #118C87;
+    border-radius: 15px;
+    border: none;
+    padding: 12px 0;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 1.25px;
+    color: #1A2A33;
+
+    transition: 0.5s all ease-out;
+}
+
+.skyBlue-button:hover {
+    background: #65E9E4;
+    box-shadow: inset 0px -8px 0px #22d3cd;
+    border-radius: 15px;
+}
+
+.select-mode button{
+    padding: 16px 0;    
+}
+
+/* JS STYLE */
+
+.start-text {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 140px;
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    color: #31C3BD;
+    text-shadow: -3px 6px 32px rgba(0,246,255,0.7);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    transition: 0.6s all ease-out;
+    opacity: 0;
+}
+@media (max-width: 640px) {
+    .start-text{
+        font-size: 80px;
+    }
+}
+
+/* PLAYING STYLES */
+
+#playDiv {
+    opacity: 0;
+    display: none;
+    transition: 0.6s all ease-out;
+}
+
+.turn-div {
+    display: flex;
+    gap: 12px;
+    padding: 12px 30px;
+    background: #1F3641;
+    box-shadow: inset 0px -4px 0px #10212A;
+    border-radius: 10px;
+}
+
+#restart {
+    background: #A8BFC9;
+    box-shadow: inset 0px -4px 0px #6B8997;
+    border-radius: 10px;
+    padding: 16px;
+    border: none;
+}
+
+#squares {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.square {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background: #1F3641;
+    box-shadow: inset 0px -8px 0px #10212a;
+    border-radius: 15px;
+    height: 140px;
+    text-align: center;
+    align-items: center;
+}
+
+.sums {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.sums div{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    padding: 12px 0;
+}
+
+#sumX {
+    background: #31C3BD;
+}
+
+#sumTies {
+    background: #A8BFC9;
+}
+
+#sumO {
+    background: #F2B137;
+}
+
+.sums div h6 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.875px;
+    color: #1A2A33;
+    
+}
+
+.sums div h5 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 1.5px;
+    color: #1A2A33;
+}
+
+.turn-div {
+    max-width: 140px;
+    width: 100%;
+}
+
+@media (max-width:560px) {
+    .square {
+        height: 96px;
+    }
+    .container {
+        max-width: 328px;
+        width: 100%;
+        gap: 20px;
+    }
+}
+
+#blur {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+}
+#wonDiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    padding: 45px 0;
+    display: none;
+    flex-direction: column;
+    gap: 24px;
+    background: #1F3641;
+    z-index: 5;
+}
+
+h4 {
+    font-family: 'Outfit',sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #A8BFC9;
+}
+
+
+#getWinner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+#quitNextButtons, #cancelRestartButtons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+
+.grey-button {
+    padding: 16px;
+    background: #A8BFC9;
+    box-shadow: inset 0px -4px 0px #6B8997;
+    border-radius: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #1A2A33;
+    transition: 0.3s all ease-in;
+    border: none;
+}
+
+.grey-button:hover {
+    background: #cae1eb;
+    box-shadow: inset 0px -4px 0px #91aebd;
+}
+
+.orange-buttonS {
+    padding: 16px;
+    background: #F2B137;
+    box-shadow: inset 0px -4px 0px #CC8B13;
+    border-radius: 10px;
+
+    font-family: 'Outfit',sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #1A2A33;
+    transition: 0.3s all ease-in;
+    border: none;
+}
+
+.orange-buttonS:hover{
+    background: #FFC860;
+    box-shadow: inset 0px -4px 0px #f1ae1b; 
+}
+
+h2 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 2.5px;
+    color: #F2B137;
+
+}
