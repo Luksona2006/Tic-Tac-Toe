@@ -323,24 +323,6 @@ span {
     width: 100%;
 }
 
-@media (max-width:560px) {
-    .square {
-        height: 96px;
-    }
-    .container {
-        max-width: 328px;
-        width: 100%;
-        gap: 20px;
-    }
-    #getWinner {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-    h2 {
-        font-size: 24px;
-    }
-}
 
 #blur {
     display: none;
@@ -442,4 +424,23 @@ h2 {
     letter-spacing: 2.5px;
     color: #F2B137;
 
+}
+
+@media (max-width:560px) {
+    .square {
+        height: 96px;
+    }
+    .container {
+        max-width: 328px;
+        width: 100%;
+        gap: 20px;
+    }
+    #getWinner {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    h2 {
+        font-size: 24px;
+    }
 }
