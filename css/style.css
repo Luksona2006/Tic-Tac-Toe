@@ -332,6 +332,14 @@ span {
         width: 100%;
         gap: 20px;
     }
+    #getWinner {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    h2 {
+        font-size: 24px;
+    }
 }
 
 #blur {
