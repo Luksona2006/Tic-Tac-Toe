@@ -22,7 +22,6 @@ let sumO = document.getElementById('sumO');
 let x = 0;
 let o = 0;
 let ties = 0;
-let win = false;
 
 let blur = document.getElementById('blur');
 let wonDiv = document.getElementById('wonDiv');
@@ -156,10 +155,12 @@ function mouseOver(e) {
     }
 }
 
+// TIE 
+
 function clickDiv(e) {
     let curDiv = e.currentTarget;
-    let noOneWon = false;
     let emptySquare = false;
+    let win = false;
 
     // PASTE & FIND NEXT 
     if(sumX.firstChild.innerText !== 'X (CPU)' || sumO.firstChild.innerText !== 'O (CPU)') {
@@ -260,31 +261,28 @@ function clickDiv(e) {
                 getWinner.firstElementChild.innerHTML = `${svgO}`
                 getWinner.lastElementChild.innerHTML = "TAKES THE ROUND";
                 getWinner.lastElementChild.style.color = "#F2B137";
-                win = true;
+                win= true;
             }
         }
     }
-
-    if(win === false) {
-        square.forEach((element,index) => {
-            if(element.innerHTML == '') {
-                 emptySquare = true;
-            } 
-            if(index >= squares.children.length - 1 && emptySquare === false) {
-                ties++
-                sumTies.lastElementChild.innerHTML = `${ties}`;
-                // GET NOTIFICATION
-                blur.style.display = "block";
-                wonDiv.style.display = "flex";
-                quitNextButtons.style.display = "flex"
-                cancelRestartButtons.style.display = "none"
-                getWinner.firstElementChild.style.display = "none";
-                getWinner.lastElementChild.innerHTML = "ROUND TIED";
-                getWinner.lastElementChild.style.color = "#A8BFC9";
-                winOrLose.innerText = '';
-            }
-        });
-    }
+    square.forEach((element,index) => {
+        if(element.innerHTML == '') {
+                emptySquare = true;
+        } 
+        if(index >= squares.children.length - 1 && emptySquare === false && win === false) {
+            ties++
+            sumTies.lastElementChild.innerHTML = `${ties}`;
+            // GET NOTIFICATION
+            blur.style.display = "block";
+            wonDiv.style.display = "flex";
+            quitNextButtons.style.display = "flex"
+            cancelRestartButtons.style.display = "none"
+            getWinner.firstElementChild.style.display = "none";
+            getWinner.lastElementChild.innerHTML = "ROUND TIED";
+            getWinner.lastElementChild.style.color = "#A8BFC9";
+            winOrLose.innerText = '';
+        }
+    });
 }
 
 
