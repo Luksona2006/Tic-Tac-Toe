@@ -313,40 +313,40 @@ function clickDiv(e) {
 
 
 // MODES
-function cpuMode() {
-    if (choosed == false) {
-        pickText.style.color = "#e66771";
-        return false;
-    }
-    if (choosed == 'O') {
-        pickText.style.color = "#e66771";
-        pickText.innerHTML = "CHOOSE X";
-        return false;
-    }
-    if (choosed === 'X') {
-        sumX.firstChild.innerText = 'X (YOU)';
-        sumO.firstChild.innerText = 'O (CPU)';
-    }
-    if (choosed === 'O') {
-        sumO.firstChild.innerText = 'O (YOU)';
-        sumX.firstChild.innerText = 'X (CPU)';
-    }
+// function cpuMode() {
+//     if (choosed == false) {
+//         pickText.style.color = "#e66771";
+//         return false;
+//     }
+//     if (choosed == 'O') {
+//         pickText.style.color = "#e66771";
+//         pickText.innerHTML = "CHOOSE X";
+//         return false;
+//     }
+//     if (choosed === 'X') {
+//         sumX.firstChild.innerText = 'X (YOU)';
+//         sumO.firstChild.innerText = 'O (CPU)';
+//     }
+//     if (choosed === 'O') {
+//         sumO.firstChild.innerText = 'O (YOU)';
+//         sumX.firstChild.innerText = 'X (CPU)';
+//     }
 
-    chooseProperties.style.transition = "0.6s all ease-out";
-    chooseProperties.style.opacity = "0";
-    setTimeout(() => {
-        chooseProperties.style.display = "none";
-    }, 600)
-    setTimeout(() => {
-        startText();
-    }, 700)
-    setTimeout(() => {
-        playDiv.style.display = "flex";
-    }, 5400)
-    setTimeout(() => {
-        playDiv.style.opacity = "1";
-    }, 5500)
-}
+//     chooseProperties.style.transition = "0.6s all ease-out";
+//     chooseProperties.style.opacity = "0";
+//     setTimeout(() => {
+//         chooseProperties.style.display = "none";
+//     }, 600)
+//     setTimeout(() => {
+//         startText();
+//     }, 700)
+//     setTimeout(() => {
+//         playDiv.style.display = "flex";
+//     }, 5400)
+//     setTimeout(() => {
+//         playDiv.style.opacity = "1";
+//     }, 5500)
+// }
 
 function playerMode() {
     if (choosed == false) {
@@ -486,7 +486,7 @@ quit.addEventListener('click', quitGame);
 
 selectXMark.addEventListener('click', chooseXMark);
 selectOMark.addEventListener('click', chooseOMark);
-cpuButton.addEventListener('click', cpuMode);
+
 playerButton.addEventListener('click', playerMode);
 
 square.forEach(div => {
